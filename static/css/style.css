@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3a7c1, #5d5c61); /* Gradient background */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: black; /* Ensure title is black */
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input, select {
+    padding: 12px;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+}
+
+input:focus, select:focus {
+    border-color: #a4c8e5;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff4c4c;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.3em;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        padding: 12px 0;
+        font-size: 1em;
+    }
+}

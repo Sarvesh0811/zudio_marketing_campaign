@@ -1,0 +1,12 @@
+{
+    "Gender": {
+      "Female": 1,
+      "Male": 0
+    },
+    "Segment": {
+      "Occasional": 0,
+      "Budget": 1,
+      "Premium": 2
+    }
+  }
+  

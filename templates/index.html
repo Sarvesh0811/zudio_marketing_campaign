@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zudio - Response to Campaign</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color:black; text-align: center;">Zudio - Response to Campaign</h1>
+
+        <!-- Form to collect user data -->
+        <form action="/predict" method="POST">
+            <label for="Age">Age:</label>
+            <input type="number" id="Age" name="Age" value="{{ Age if Age else '' }}" required><br>
+
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" required>
+                <option value="Female" {% if Gender == 1 %} selected {% endif %}>Female</option>
+                <option value="Male" {% if Gender == 0 %} selected {% endif %}>Male</option>
+            </select><br>
+
+            <label for="AvgPurchaseAmount (INR)">Avg Purchase Amount (INR):</label>
+            <input type="number" id="AvgPurchaseAmount (INR)" name="AvgPurchaseAmount (INR)" value="{{ AvgPurchaseAmount_INR if AvgPurchaseAmount_INR else '' }}" required><br>
+
+            <label for="Segment">Segment:</label>
+            <select id="Segment" name="Segment" required>
+                <option value="Occasional" {% if Segment == 'Occasional' %} selected {% endif %}>Occasional</option>
+                <option value="Budget" {% if Segment == 'Budget' %} selected {% endif %}>Budget</option>
+                <option value="Premium" {% if Segment == 'Premium' %} selected {% endif %}>Premium</option>
+            </select><br>
+
+            <label for="PurchaseHistory">Purchase History:</label>
+            <select id="PurchaseHistory" name="PurchaseHistory" required>
+                <option value="Footwear" {% if PurchaseHistory == 'Footwear' %} selected {% endif %}>Footwear</option>
+                <option value="Casual_Wear" {% if PurchaseHistory == 'Casual_Wear' %} selected {% endif %}>Casual Wear</option>
+                <option value="Traditional_Wear" {% if PurchaseHistory == 'Traditional_Wear' %} selected {% endif %}>Traditional Wear</option>
+                <option value="Accessories" {% if PurchaseHistory == 'Accessories' %} selected {% endif %}>Accessories</option>
+                <option value="Gym Wear" {% if PurchaseHistory == 'Gym Wear' %} selected {% endif %}>Gym Wear</option>
+            </select><br>
+
+            <label for="PurchaseFrequency">Purchase Frequency:</label>
+            <select id="PurchaseFrequency" name="PurchaseFrequency" required>
+                <option value="Monthly" {% if PurchaseFrequency == 'Monthly' %} selected {% endif %}>Monthly</option>
+                <option value="Quarterly" {% if PurchaseFrequency == 'Quarterly' %} selected {% endif %}>Quarterly</option>
+            </select><br>
+
+            <!-- Change "Date Difference" to "Last Visited" -->
+            <label for="date_difference">Last Visited:</label>
+            <input type="number" id="date_difference" name="date_difference" value="{{ date_difference if date_difference else '' }}" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if prediction is not none %}
+        <h3>Response to Campaign: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
